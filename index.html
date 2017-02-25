@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Rich Man's Reddit</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid clearfix" id="header">
+            <h1>Tweddit</h1>
+        </div>
+    </header>
+    <div class="container" id="content" ng-app='myModule' ng-controller='redditController'>
+
+          <div class="col-sm-12 row post text-center center-block" ng-repeat='item in listing'>
+            <div class="col-sm-12 center-block">
+              <h3>{{item.data.title}}</h3>
+              <p>{{item.data.author}}</p>
+              <img src="{{item.data.preview.images[0].source.url}}" />
+            </div>
+          </div>
+    </div>
+
+
+</body>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='js/modules/myModule.js'></script>
+<script src='js/controllers/redditController.js'></script>
+<script src='js/factories/factory.js'></script>
+
+<script src='js/script.js'></script>
+
+</html>
